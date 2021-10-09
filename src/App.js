@@ -1,5 +1,6 @@
 import "./App.css";
 import { Component } from "react";
+import Section from "./components/section/Section";
 
 class App extends Component {
   state = {
@@ -32,16 +33,17 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <h2>Please leave feedback</h2>
-        <button onClick={this.handleClickGood}>Good</button>
-        <button onClick={this.handleClickNeutral}>Neutral</button>
-        <button onClick={this.handleClickBad}>Bad</button>
-        <h2>Statistics</h2>
-        <p>Good: {good}</p>
-        <p>Neutral: {neutral}</p>
-        <p>Bad: {bad}</p>
-        <p>Total: {countTotalFeedback}</p>
-        <p>Positive feedback: {countPositiveFeedbackPercentage}</p>
+        <Section
+          title={"Please leave feedback"}
+          handleClickGood={this.handleClickGood}
+          handleClickNeutral={this.handleClickNeutral}
+          handleClickBad={this.handleClickBad}
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          totalFeedback={countTotalFeedback}
+          positiveFeedbackPercentage={countPositiveFeedbackPercentage}
+        />
       </div>
     );
   }
